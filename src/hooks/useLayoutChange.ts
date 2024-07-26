@@ -7,7 +7,7 @@ interface IArgs {
   isRightSideBar?: boolean;
 }
 
-export const useInit = ({ children, isRightSideBar }: IArgs) => {
+export const useLayoutChange = ({ children, isRightSideBar }: IArgs) => {
   const { setChildren, activateRightSideBar }: IOutletContext = useOutletContext();
 
   useEffect(() => {

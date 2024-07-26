@@ -138,13 +138,13 @@ const Root = () => (
 
 ```tsx
 import useServices from "@src/services/use-services";
-import useInit from "./use-init";
+import useLayoutChange from "./use-init";
 
 function Component() {
 
   const some = useServices().some;
 
-  useInit(async () => {
+  useLayoutChange(async () => {
     await some.doSomething();
   });
 
@@ -166,7 +166,7 @@ class SomeService extends Service<TSomeServiceConfig> {
 }
 ```
 
-## `useInit()`
+## `useLayoutChange()`
 
 Вспомогательный хук для выполнения асинхронной инициализации в компоненте. По сути заменяет хук
 `useEffect`, но учитываются особенности рендера на сервере, чтобы дожидаться инициализации перед
@@ -178,9 +178,9 @@ class SomeService extends Service<TSomeServiceConfig> {
 
 ```ts
 // Если использует SSR, то при первым рендере на клиенте (при гидрации) 
-// useInit не будет лишний раз выполняться. 
-// Но при смене зависимостей useInit корректно выполнится.
-useInit(async () => {
+// useLayoutChange не будет лишний раз выполняться. 
+// Но при смене зависимостей useLayoutChange корректно выполнится.
+useLayoutChange(async () => {
   await services.store.modules.categories.load({fields: '*', limit: 1000});
 }, [], {ssr: 'categories.load'});
 ```
