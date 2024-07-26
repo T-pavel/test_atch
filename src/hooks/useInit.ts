@@ -12,7 +12,7 @@ export const useInit = ({ children, isRightSideBar }: IArgs) => {
 
   useEffect(() => {
     setChildren(children);
-  }, [setChildren, children]);
+  }, [setChildren]);
 
   useEffect(() => {
     activateRightSideBar(isRightSideBar);
