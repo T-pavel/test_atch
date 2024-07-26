@@ -37,11 +37,11 @@ class State<T> {
 }
 
 // Хук для использования состояния
-const useStateSync = <T>(stateInstance: State<T>): T => {
+const useStateExternal = <T>(stateInstance: State<T>): T => {
     return useSyncExternalStore(
         (callback) => stateInstance.subscribe(callback),
         () => stateInstance.getState()
     );
 };
 
-export { State, useStateSync };
+export { State, useStateExternal };
