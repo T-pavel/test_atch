@@ -1,4 +1,6 @@
+import { ReactNode } from "react";
+
 export interface IOutletContext {
-  setTitle: (title: string | JSX.Element) => void;
+  setChildren: (children: ReactNode) => void;
   activateRightSideBar: (isActive?: boolean) => void;
 }

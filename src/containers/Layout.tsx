@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./styles.css";
 
 export const Layout = () => {
-  const [stateTitle, setStateTitle] = useState<string>("Title");
+  const [stateChildren, setChildren] = useState<ReactNode>("Title");
   const [stateShowRightSideBar, setStateShowRightSideBar] =
     useState<boolean>(false);
   return (
     <div className="layout">
-      <aside className="left-sidebar">{stateTitle}</aside>
+      <aside className="left-sidebar">{stateChildren}</aside>
       <main className="content">
         <Outlet
           context={{
-            setTitle: setStateTitle,
             activateRightSideBar: setStateShowRightSideBar,
+            setChildren
           }}
         />
       </main>

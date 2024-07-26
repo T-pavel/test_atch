@@ -1,6 +1,10 @@
 import { useInit } from "@src/hooks/useInit"
 
 export const StepTwoPage = () => {
-    useInit({title: 'StepTwoPageTitle'})
+    useInit({children: <SideBarStepTwo />, isRightSideBar: true})
     return <div>StepTwoPage</div>
+}
+
+const SideBarStepTwo =() => {
+    return <div>SideBarStepTwo</div>
 }

@@ -1,18 +1,18 @@
 import { IOutletContext } from "@src/types";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 
 interface IArgs {
-  title: string | JSX.Element;
+  children: ReactNode;
   isRightSideBar?: boolean;
 }
 
-export const useInit = ({ title, isRightSideBar }: IArgs) => {
-  const { setTitle, activateRightSideBar }: IOutletContext = useOutletContext();
+export const useInit = ({ children, isRightSideBar }: IArgs) => {
+  const { setChildren, activateRightSideBar }: IOutletContext = useOutletContext();
 
   useEffect(() => {
-    setTitle(title);
-  }, [setTitle, title]);
+    setChildren(children);
+  }, [setChildren, children]);
 
   useEffect(() => {
     activateRightSideBar(isRightSideBar);
