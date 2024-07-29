@@ -1,19 +1,22 @@
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./styles.css";
+import { PageKeyEnum } from "@src/types";
+import { SideBar } from "./SideBar";
 
 export const Layout = () => {
-  const [stateChildren, setChildren] = useState<ReactNode>("Title");
+  const [pageKey, setChildren] = useState<PageKeyEnum>(PageKeyEnum.OneStep);
   const [stateShowRightSideBar, setStateShowRightSideBar] =
     useState<boolean>(false);
+  
   return (
     <div className="layout">
-      <aside className="left-sidebar">{stateChildren}</aside>
+      <SideBar pageKey={pageKey} />
       <main className="content">
         <Outlet
           context={{
             activateRightSideBar: setStateShowRightSideBar,
-            setChildren
+            setChildren,
           }}
         />
       </main>

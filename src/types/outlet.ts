@@ -1,6 +1,9 @@
-import { ReactNode } from "react";
-
 export interface IOutletContext {
-  setChildren: (children: ReactNode) => void;
+  setChildren: (pageKey: PageKeyEnum) => void;
   activateRightSideBar: (isActive?: boolean) => void;
+}
+
+export const enum PageKeyEnum {
+  OneStep = 'oneStep',
+  TwoStep = 'twoStep'
 }

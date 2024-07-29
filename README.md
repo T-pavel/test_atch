@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Структура проекта 
+ 
+Проект состоит из следующих основных директорий: 
+ 
+1. **components**: В этой директории содержатся переиспользуемые компоненты, такие как Modal. 
+    
+2. **containers**: Здесь находятся компоненты разметки страницы, такие как sidebar, header, footer, main. 
+    
+3. **ui**: В этой директории находятся переиспользуемые атомарные компоненты с инкапсулированной реализацией внутренней логики и стилей, такие как Button, Input, Checkbox, Select. 
+    
+4. **features**: Логические блоки интерфейса. На текущем этапе присутствует только одна фича - ifc. Внутри каждой фичи есть директория **pages**, где находятся страницы соответствующих маршрутов, описанных в файле **App.tsx**. 
+    
+5. **services**: В этой директории содержится собственный файл документации.
+- src
+  - components
+    - Modal
+  - containers
+    - Sidebar
+    - Header
+    - Footer
+    - Main
+  - ui
+    - Button
+    - Input
+    - Checkbox
+    - Select
+  - features
+    - ifc
+      - pages
+        - (страницы соответствующих маршрутов)
+  - services
+    - ifc
+6. **hooks**: Общие хуки всего приложения
+7. **types**: Глобальные типизации и декларации типов всего приложения
+8. **assets**: Статичные файлы для использования(шрифты, иконки, изображения)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Старт проекта
+1. **yarn or npm install**: установка зависимостей
+2. **npm run dev**: установка зависимостей
